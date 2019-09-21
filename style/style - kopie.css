@@ -1,0 +1,71 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  margin: 0;
+}
+
+header{
+  background: #de373d;
+  color: white;
+  width: 100vw;
+  margin: 0;
+  height: 13vh;
+  display: flex;
+  position: relative;
+}
+
+header > img{
+  width: 26vmin;
+  align-self: flex-start;
+}
+
+.headerContent{
+  display:flex;
+}
+
+nav{
+  margin: .5vw;
+  margin-right: 2vw;
+}
+
+ul{
+  padding: 0;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+li{
+  list-style: none;
+  width: 10em;
+  margin: 0 .5em 0 .5em;
+  text-align: center;
+}
+
+li:hover > a{
+  transition: 0.6s color;
+  color: #2264ae;
+}
+
+li > a{
+  transition: 0.6s color;
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+}
+
+.menuLogo{
+  align-self: center;
+  width: 3em;
+  position: relative;
+  z-index: 3;
+}
+
+main{
+  position: relative;
+  z-index: 4;
+}

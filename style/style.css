@@ -1,0 +1,294 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  margin: 0;
+}
+
+header{
+  width: 100%;
+  height: 10vh;
+  background: #de373d;
+  position: fixed;
+  z-index: 2;
+}
+
+nav{
+  padding: 0;
+  margin: 0;
+  /* justify-content: space-between; */
+}
+
+
+nav input{
+  display: none;
+}
+
+nav label{
+  display: inline-block;
+  align-self: center;
+  margin: 1.5vh;
+  font-size: 5vh;
+  color: white;
+}
+
+nav>ul{
+  display: none;
+  list-style: none;
+  padding: 3vh 0 0 0;
+  margin: 0;
+  background: #de373d;
+}
+
+nav input:checked ~ ul{
+  display: block;
+}
+
+nav>ul>li{
+  display: inline-block;
+  background: #de373d;
+  text-align: center;
+  padding: 3vh;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: solid 1px white;
+}
+
+nav>ul>li>a{
+  color: white;
+  text-decoration: none;
+}
+
+header>img{
+  position: absolute;
+  width: 24vw;
+  max-width: 7em;
+  margin-top: 0;
+  padding-top: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  /* margin-left: 38vw */
+}
+
+main{
+  padding-top: 35vh;
+}
+
+.frame{
+  background: #de373d;
+  width: 100vw;
+  height: 35vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.load{
+  animation: mainslides 13s;
+}
+
+.slider{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vh;
+  width: 94vw;
+  margin: 12vh 3vw 0 3vw;
+  animation: mainslides 39s infinite;
+  position: fixed;
+}
+
+@keyframes mainslides {
+  0%{
+    background-image: url("../resources/images/main1.jpg");
+  }
+  33%{
+    background-image: url("../resources/images/main2.jpg");
+  }
+  66%{
+    background-image: url("../resources/images/main3.jpg");
+  }
+  100%{
+    background-image: url("../resources/images/main1.jpg");
+  }
+}
+
+article>h2{
+  padding-top: 0;
+  margin-top: 0;
+}
+
+article{
+  width: 100vw;
+  background: yellow;
+  padding: 0;
+  margin: 0;
+}
+
+article>ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  list-style: none;
+  background: white;
+  color: darkgrey;
+  padding: 1rem;
+  margin: 0;
+}
+
+article>ul>li{
+  margin: 0;
+  padding-bottom: 1rem;
+  min-width: 15em;
+  max-width: 30em;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+article>ul>li>p{
+  margin: 0;
+  padding: 0;
+}
+
+article h3{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+/* header{
+  color: white;
+  width: 100vw;
+  margin: 0;
+  padding: 0 5vw;
+  height: 9vh;
+  box-sizing: border-box;
+  display: flex;
+  position: fixed;
+  z-index: 2;
+}
+
+header > img{
+  width: 30vmin;
+  margin-right: auto;
+  align-self: flex-start;
+}
+/*de373d*/
+/* 2264ae */
+/* nav>ul{
+  background: #de373d;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  margin-top: 1vh;
+  padding-left: 0;
+  border: solid 1px white;
+}
+
+nav > ul > li{
+  list-style: none;
+  width: 10vw;
+  text-align: center;
+}
+
+li:hover > a{
+  transition: 0.6s color;
+  color: #2264ae;
+  background: #de373d;
+  border-left: solid 1px white;
+  border-right: solid 1px white;
+  box-sizing: border-box;
+}
+
+nav > ul > li > a{
+  transition: 0.6s color;
+  flex-direction: column;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 2.5vh 0;
+}
+
+.load{
+  animation: mainslides 7s;
+}
+
+.slider{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  animation: mainslides 21s infinite;
+  position: fixed;
+}
+
+@keyframes mainslides {
+  0%{
+    background-image: url("../resources/images/main1.jpg");
+  }
+  33%{
+    background-image: url("../resources/images/main2.jpg");
+  }
+  66%{
+    background-image: url("../resources/images/main3.jpg");
+  }
+  100%{
+    background-image: url("../resources/images/main1.jpg");
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+
+    background-color: lightblue;
+  }
+
+  nav > ul{
+    flex-direction: row;
+  }
+}
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  top: 100vh;
+  background: #e2e2e2;
+  padding: 5vh 10vw;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.trainingen{
+  background: white;
+  padding: 5vh 10vw;
+}
+
+.trainingen > h2{
+  margin-top: 0;
+}
+
+.trainingen ul{
+  padding: 0;
+}
+
+.trainingen li{
+  transition: 1s padding;
+  list-style: none;
+  padding: 0;
+
+}
+
+.trainingen li:hover{
+  transition: 1s padding;
+  padding: 0 3vw;
+}  */
