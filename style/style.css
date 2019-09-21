@@ -46,17 +46,18 @@ nav input:checked ~ ul{
 }
 
 nav>ul>li{
-  display: inline-block;
+  display: block;
   background: #de373d;
-  text-align: center;
-  padding: 3vh;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
   border-top: solid 1px white;
 }
 
 nav>ul>li>a{
+  display: block;
+  text-align: center;
+  padding: 3vh;
+  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
   color: white;
   text-decoration: none;
 }
@@ -71,6 +72,38 @@ header>img{
   left: 0;
   right: 0;
   /* margin-left: 38vw */
+}
+
+@media only screen and (min-width: 900px) {
+  nav>ul{
+    display: inline-block;
+    margin: 2em;
+    padding: 0;
+  }
+
+  nav>ul>li{
+    display: inline-block;
+    border: 0px;
+  }
+
+  nav>ul>li:hover{
+    border-bottom: 1px solid white;
+    transition: 0.3s border-bottom;
+  }
+
+  nav>ul>li>a{
+    width: auto;
+    padding: 0.3em 1em;
+  }
+
+  nav label{
+    display: none;
+  }
+
+  header>img{
+    display: inline-block;
+    margin: 0;
+  }
 }
 
 main{
@@ -128,21 +161,18 @@ article{
 }
 
 article>ul{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   list-style: none;
   background: white;
-  color: darkgrey;
-  padding: 1rem;
+  color: black;
   margin: 0;
+  padding: 0;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, 20em);
+  justify-content: center;
 }
 
 article>ul>li{
-  margin: 0;
-  padding-bottom: 1rem;
-  min-width: 15em;
-  max-width: 30em;
   box-sizing: border-box;
   border: 1px solid black;
 }
