@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
-  <title>Website</title>
+  <title>American Ninja Warrior</title>
 </head>
 <body>
   <header>
-    <img src="resources/images/logo.png" alt="logo">
+    <!-- <a href="index.html"><img src="resources/images/logo.png" alt="logo"></a> -->
       <!-- NAVIGATION BAR -->
+      <a href="index.html"><img src="resources/images/logo.png" alt="logo"></a>
       <nav>
         <!-- HAMBURGER MENU -->
         <label for="hamburger">&#9776;</label>
@@ -23,52 +24,87 @@
           <li><a href="#">Mijn tickets</a></li>
           <li><a href="#">Mijn obstakels</a></li>
           <li><a href="#">Uitleg obstakels</a></li>
-          <li><a href="#">Meldingen</a></li>
         </ul>
       </nav>
+      <!-- <img src="resources/logos/searchLogo.svg" alt="Zoek afbeelding"> -->
   </header>
   <div class="frame">
-    <div class="slider">
+    <video muted autoplay loop>
+      <source src="resources/video/headerVideo.mp4" type="video/mp4">
+    </video>
+    <!-- <div class="slider">
       <div class="load"></div>
-    </div>
+    </div> -->
   </div>
   <main>
-    <article>
-      <h2>Alle trainingen</h2>
+    <section>
+      <div>
+        <h1>Alle trainingen</h1>
+        <select>
+          <option value="distance">Afstand</option>
+          <option value="provider">Aanbieder</option>
+          <option value="review">Beoordeling</option>
+        </select>
+      </div>
+
       <ul>
         <li>
-          <h3>Bodyfit: Tarzan Swing</h3>
-          <p>sportschool</p>
-          <p>Vandaag 14:00</p>
-          <p>Beginner</p>
+          <h2>Bodyfit: Tarzan Swing</h2>
+          <!-- <div> -->
+            <!-- <img src="resources/images/tarzanswing.jpg" alt="Tarzan Sing image"> -->
+            <!-- <div> -->
+              <p>Sportschool</p>
+              <p>Vandaag 14:00</p>
+              <p>Beginner</p>
+            <!-- </div> -->
+            <p><strong>2.2km</strong></p>
+          <!-- </div> -->
         </li>
         <li>
-          <h3>Jumping Bars</h3>
+          <h2>Jumping Bars</h2>
           <p>Door: Henk Brouwer</p>
           <p>Vandaag 11:00</p>
           <p>Beginner</p>
+          <p><strong>2.5km</strong></p>
         </li>
         <li>
-          <h3>De bulder bas: Salmon Ladder</h3>
+          <h2>De bulder bas: Salmon Ladder</h2>
           <p>Sportschool</p>
           <p>Morgen 14:00</p>
           <p>Kage</p>
+          <p><strong>5.7km</strong></p>
         </li>
-        <!-- <li>
-          <h3>Bodyshop: Unstable Bridge</h3>
+        <li>
+          <h2>Bodyshop: Unstable Bridge</h2>
           <p>Sportschool</p>
           <p>Morgen 16:00</p>
           <p>Kage</p>
+          <p><strong>7.2km</strong></p>
         </li>
         <li>
-          <h3>Bodyflash: Unstable Bridge</h3>
+          <h2>Bodyflash: Unstable Bridge</h2>
           <p>Sportschool</p>
           <p>Morgen 17:30</p>
           <p>Beginner</p>
-        </li> -->
+          <p><strong>9.4km</strong></p>
+        </li>
       </ul>
-    </article>
+    </section>
+    <section>
+      <h1>Misschien ook leuk om te proberen:</h1>
+      <ul>
+        <li>
+          <h2>Bodyflash: Unstable Bridge</h2>
+          <p>Sportschool</p>
+          <p>Morgen 17:30</p>
+          <p>Beginner</p>
+          <p><strong>11.5km</strong></p>
+        </li>
+      </ul>
+    </section>
   </main>
-
+  <footer>
+    <p>Copyrighted by: Marco Fijan</p>
+  </footer>
 </body>
 </html>

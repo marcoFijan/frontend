@@ -2,8 +2,7 @@
 :root {
 	/*COLORS*/
   --bgColor: #f1f1f1;
-  --headerColor: #c12026;
-	/* --headerColor: #de373d; */
+	--headerColor: #de373d;
 	--accentColor: #2264ae;
   --buttonColor: #0077cc;
 }
@@ -15,11 +14,7 @@
 
 body{
   margin: 0;
-  /* Bron video: https://www.youtube.com/watch?v=07kABuU3vo4 */
-  background: url(../resources/images/bgImage.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background: var(--bgColor);
 }
 
 strong{
@@ -31,36 +26,30 @@ strong{
   border-radius: 1em 0;
 }
 
-h1{
-  padding-top: 1em;
-  color: var(--headerColor);
-}
-
-h2{
-  font-size: 1.2em;
-  /* color: var(--accentColor); */
-}
-
-main{
-  margin: 0;
-  background: var(--bgColor);
-}
-
 /* ==========================================================================HEADER====================================================================== */
 header{
   width: 100%;
-  height: 5em;
+  height: 10vh;
   background: var(--headerColor);
-  border-bottom: .1em solid white;
   color: black;
   position: fixed;
   z-index: 2;
 }
 
+/* nav{
+  padding: 0;
+  margin: 0;
+} */
+
 nav{
   padding: 0;
   margin: 0;
-  /* justify-content: space-between; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: blue;
+  width: 100%;
+  height: 10vh;
 }
 
 
@@ -68,13 +57,27 @@ nav input{
   display: none;
 }
 
-nav label{
+/* nav label{
   display: inline-block;
   align-self: center;
-  padding: 1.5vh;
-  font-size: 2.3em;
+  margin: 1.5vh;
+  font-size: 5vh;
   background: var(--headerColor);
   color: white;
+} */
+
+nav label{
+  color: white;
+  font-size: 5vh;
+  margin: 1.5vh;
+  order: 1;
+  align-self: center;
+}
+
+nav>img{
+  height: 5vh;
+  margin: 1.5vh;
+  order: 3;
 }
 
 nav>ul{
@@ -83,7 +86,7 @@ nav>ul{
   padding: 3vh 0 0 0;
   margin: 0;
   background: var(--headerColor);
-  height: 100vh;
+  width: 100%;
 }
 
 nav input:checked ~ ul{
@@ -95,76 +98,73 @@ nav>ul>li{
   background: var(--headerColor);
   border-top: solid 1px white;
   transition: all .3s ease-in;
-  padding: .1em 1em;
 }
 
 nav>ul>li:hover{
   background: var(--accentColor);
   border-radius: 1em 0;
   color: white;
-  border: .1em solid white;
-  box-sizing: border-box;
 }
 
 
-nav>ul>li>a{
+/* nav>ul>li>a{
   display: block;
   text-align: center;
-  padding: 2em 1em;
+  padding: 3vh;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
   color: white;
   text-decoration: none;
-}
+} */
 
-header>a>img{
+/* header>a>img{
   position: absolute;
   width: 24%;
-  max-width: 10em;
+  max-width: 7em;
   margin-top: 0;
   padding-top: 0;
   margin: 0 auto;
   left: 0;
   right: 0;
-}
+} */
+
 
 header>a>img:hover{
   transform: rotate(360deg);
   transition: 3s ease-out;
 }
 
-header>img{
-  width: 2em;
+header>nav>a{
+  padding: 0;
+  margin: 0;
+  width: 24%;
+  max-width: 7em;
+  order: 2;
 }
 
-nav>img{
-  width: 3em;
+header>nav>a>img{
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
 }
+
+/* header>img{
+  width: 2em;
+} */
+
+/* nav>img{
+  width: 3em;
+} */
 
 /* ==========================================================================SLIDER===================================================================== */
 .frame{
-  background: var(--headerColor);
+  background: #de373d;
   width: 100%;
-  height: 43vh;
+  height: 35vh;
   /* position: fixed; */
-  display: block;
+  position: block;
   z-index: 1;
-}
-
-.frame>video{
-  margin-top: 4em;
-  height: 33vh;
-  width: 100%;
-  object-fit: cover;
-
-}
-
-.transition{
-  width: 100%;
-  height: 5em;
-  background-image: linear-gradient(var(--headerColor), var(--bgColor));
-  background: blue;
 }
 
 .load{
@@ -181,7 +181,7 @@ nav>img{
   margin: 0 3%;
   animation: mainslides 39s infinite;
   /* position: fixed; */
-  display: block;
+  position: block;
 }
 
 @keyframes mainslides {
@@ -200,6 +200,10 @@ nav>img{
 }
 
 /* ===========================================================================MAIN====================================================================== */
+main{
+  padding-top: 35vh;
+  /* overflow-x: hidden; */
+}
 
 section{
   width: 90%;
@@ -249,7 +253,7 @@ section>ul{
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   grid-gap: 5%;
 }
 
@@ -258,7 +262,7 @@ section>ul>li{
   /* border: 1px solid black; */
   padding: 1em;
   background: white;
-  border: 0.1em solid var(--accentColor);
+  border: 0.3em solid var(--accentColor);
   transition: .4s background ease-in-out;
 }
 
@@ -293,45 +297,29 @@ section h3{
 
 @media only screen and (min-width: 1000px) {
   .frame{
-    background: black;
-    width: 100%;
     height: 100vh;
     display: block;
     margin: 0;
     padding: 0;
-  }
-
-  .frame>video{
-    margin-top: -1em;
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
   }
 
   .slider{
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     display: block;
     margin: 0;
     padding: 0;
-  }
-
-  header{
-    height: 5em;
   }
 
   nav>ul{
     display: inline-block;
-    margin: 1em 0 1em 17%;
+    margin: 2em 2em 2em 7em;
     padding: 0;
-    height: 3em;
   }
 
   nav>ul>li{
     display: inline-block;
-    border: .1em solid var(--headerColor);
-    padding: .5em;
-    margin: .2em;
+    border: 0px;
   }
 
   nav>ul>li:first-child{
@@ -354,27 +342,13 @@ section h3{
 
   header>a>img{
     display: inline-block;
-    margin: 0 0 0 7%;
+    margin: 0;
   }
 
-  main, footer{
-    margin: 0 8%;
-    width: auto;
-    background: var(--bgColor);
-  }
-
-  footer{
-    padding: .5em;
-    background: var(--accentColor);
-    color: white;
-    text-align: center;
-    margin-bottom: 2em;
-  }
-
-  /* section{
+  section{
     width: 70%;
     margin: 0 auto;
-  } */
+  }
 }
 
 
