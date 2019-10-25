@@ -22,28 +22,54 @@ body{
   background-attachment: fixed;
 }
 
-strong{
+/* section>ul>li>p:last-child{
   font-weight: bold;
   color: var(--headerColor);
   font-size: 1.3em;
   background: white;
   padding: 0.3em;
   border-radius: 1em 0;
-}
+} */
 
 h1{
   padding-top: 1em;
+  padding-bottom: .4em;
   color: var(--headerColor);
+  margin: 0;
 }
 
 h2{
-  font-size: 1.2em;
+  font-size: 1.1em;
+  margin-bottom: 0;
   /* color: var(--accentColor); */
+}
+
+li h2{
+  margin-top: 0;
+}
+
+h2, h3{
+  color: var(--accentColor);
+}
+
+h3{
+  font-size: 1.05em;
+
 }
 
 main{
   margin: 0;
   background: var(--bgColor);
+  padding-bottom: 4em;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+strong{
+  font-size: 1.05em;
 }
 
 /* ==========================================================================HEADER====================================================================== */
@@ -127,11 +153,13 @@ header>a>img{
   margin: 0 auto;
   left: 0;
   right: 0;
+  transition: all 3s ease-out;
 }
 
 header>a>img:hover{
+  left: -8em;
   transform: rotate(360deg);
-  transition: 3s ease-out;
+  transition: all 3s ease-out;
 }
 
 header>img{
@@ -142,36 +170,31 @@ nav>img{
   width: 3em;
 }
 
-/* ==========================================================================SLIDER===================================================================== */
+/* ==========================================================================VIDEO===================================================================== */
 .frame{
   background: var(--headerColor);
   width: 100%;
-  height: 43vh;
-  /* position: fixed; */
+  height: 45vh;
   display: block;
   z-index: 1;
 }
 
-.frame>video{
+.frame img{
+  height: 20em;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(90%);
+}
+
+/* .frame>video, .frame>img, .frame>iframe{
   margin-top: 4em;
   height: 33vh;
   width: 100%;
   object-fit: cover;
+  filter: brightness(90%);
+} */
 
-}
-
-.transition{
-  width: 100%;
-  height: 5em;
-  background-image: linear-gradient(var(--headerColor), var(--bgColor));
-  background: blue;
-}
-
-.load{
-  animation: mainslides 13s;
-}
-
-.slider{
+/* .slider{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -181,25 +204,42 @@ nav>img{
   margin: 0 3%;
   animation: mainslides 39s infinite;
   /* position: fixed; */
-  display: block;
+
+.load{
+  padding-top: 5em;
+  animation: mainslides 80s;
 }
+
+.slider{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 44.5vh;
+  animation: mainslides 80s infinite;
+  filter: grayscale(90%);
+}
+
 
 @keyframes mainslides {
   0%{
-    background-image: url("../resources/images/main1.jpg");
+    background-image: url("../resources/images/jumpingBars.jpg");
   }
   33%{
-    background-image: url("../resources/images/main2.jpg");
+    background-image: url("../resources/images/salmonLadder.jpg");
   }
   66%{
-    background-image: url("../resources/images/main3.jpg");
+    background-image: url("../resources/images/tarzanswing.jpg");
   }
   100%{
-    background-image: url("../resources/images/main1.jpg");
+    background-image: url("../resources/images/unstableBridge.jpg");
   }
 }
 
+
 /* ===========================================================================MAIN====================================================================== */
+
+/* ===========================================================================WRAPPER====================================================================== */
 
 section{
   width: 90%;
@@ -213,8 +253,7 @@ section>div{
   align-items: baseline;
 }
 
-
-/* CODE VAN VERWIJDEREN DROPDOWN PIJL: https://stackoverflow.com/questions/16603979/how-to-remove-the-default-arrow-icon-from-a-dropdown-list-select-element#18878556 */
+/* ===========================================================================DROPDOWN====================================================================== */
 select{
   margin: 0 0 0 auto;
   border: 0;
@@ -228,8 +267,22 @@ select{
   background: var(--bgColor);
 }
 
+/* BRON CODE VAN VERWIJDEREN DROPDOWN PIJL: https://stackoverflow.com/questions/16603979/how-to-remove-the-default-arrow-icon-from-a-dropdown-list-select-element#18878556 */
+select:required:invalid{
+  color: grey;
+}
+
+option[value=""][disabled]{
+  display: none;
+}
+
+option{
+  color: black;
+}
+
 select>option{
   text-align: right;
+  font-size: 1.1em;
 }
 
 select>option:active{
@@ -241,41 +294,90 @@ select:focus {
   transition: .3s;
 }
 
+/* ===========================================================================GRID====================================================================== */
 section>ul{
-  justify-content: center;
+  /* justify-content: center; */
   list-style: none;
   background: var(--bgColor);
   color: black;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-  grid-gap: 5%;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-gap: 2em;
+}
+
+/* ===========================================================================GRIDITEMS====================================================================== */
+section>ul>li img{
+  object-fit: cover;
+  width: 100%;
+  height: 12em;
+  box-sizing: border-box;
+  border-bottom: 0.2em solid var(--accentColor);
+  border-radius: .8em 0 0 0;
 }
 
 section>ul>li{
   box-sizing: border-box;
   /* border: 1px solid black; */
-  padding: 1em;
   background: white;
-  border: 0.1em solid var(--accentColor);
-  transition: .4s background ease-in-out;
+  border: 0.2em solid var(--accentColor);
+  transition: .4s all ease-in-out;
+  border-radius: 0 0 1em 0;
 }
 
-section>ul>li>p:last-child{
-  text-align: right;
+section>ul>li h2{
+  padding: .5em 1em 0 1em;
 }
 
-section>ul>li:hover{
-  background: var(--accentColor);
-  color: white;
-  transition: .4s background ease-in-out;
-}
-
-section>ul>li>div{
+section>ul>li article{
+  padding: 0 1em 1em 1em;
   display: flex;
   flex-direction: row;
 }
+
+section>ul>li article>section{
+  padding: 0;
+  margin: 0;
+}
+
+section>ul>li article>section:last-child{
+  padding: 0;
+  margin: 0;
+  background: white;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--headerColor);
+  padding: .3em;
+  border-radius: 1em 0;
+  width: 4em;
+  align-self: flex-end;
+}
+
+/* section>ul>li article>p:last-child{
+  font-weight: bold;
+  color: var(--headerColor);
+  background: white;
+  font-size: 1.3em;
+  padding: 0.3em;
+  border-radius: 1em 0;
+  text-align: right;
+} */
+
+section>ul>li:hover, section>ul>li:hover a, section>ul>li:hover h2{
+  background: var(--accentColor);
+  color: white;
+  transition: .4s ease-in-out;
+  border-radius: 1em 0;
+}
+
+
+
+/* section>ul>li>div{
+  display: flex;
+  flex-direction: row;
+} */
 
 section>ul>li>div>img{
   height: 6em;
@@ -291,33 +393,220 @@ section h3{
   padding: 0;
 }
 
+
+.detailPageMain{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  padding: 0 5%;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+
+.detailPageMain>section{
+  max-width: 40em;
+  min-width: 20em;
+  margin: 0;
+  /* min-width: 30em; */
+}
+
+.detailPageMain>section:first-child>p:last-child{
+  font-size: .8em;
+  margin-bottom: 1em;
+}
+
+.detailPageMain>section:nth-child(2){
+  width: 27em;
+  text-align: left;
+  background: white;
+  border-radius: 1em 0;
+  height: auto;
+  padding: 0 1em;
+  box-sizing: border-box;
+  margin-top: 1em;
+  min-height: 26em;
+  align-self: flex-start;
+  margin-bottom: auto;
+  /* min-width: 25em; */
+}
+
+table{
+  border: 1px solid black;
+  background: white;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+table>tr{
+  text-align: center;
+}
+
+th{
+  padding: 1em 0;
+  color: white;
+  background: var(--accentColor);
+}
+
+td{
+  border-bottom: 0.1em solid var(--accentColor);
+  text-align: center;
+}
+
+
+
+/* ===========================================================================FOOTER====================================================================== */
+footer{
+  background: var(--headerColor);
+  color: white;
+  text-align: center;
+  margin-bottom: 3em;
+  padding: 3% 5%;
+}
+
+footer>section{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+footer>section>img{
+  /* max-width: 7em; */
+  width: 24%;
+  max-width: 15em;
+  margin: auto;
+  display: none;
+}
+
+footer>section>form{
+  width: 90%;
+  max-width: 30em;
+  margin: auto;
+
+}
+
+footer>section>form>fieldset{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+footer>section>form>fieldset>label{
+  padding: .8em 0 .3em 0;
+  text-align: left;
+}
+
+footer>section>form>fieldset>input{
+  padding: .1em;
+  border: none;
+  transition: all .3s ease-in;
+  background: var(--bgColor);
+  color: black;
+  border: .1em solid transparent;
+  border-bottom: .3em solid transparent;
+}
+
+footer>section>form>fieldset>input:focus{
+  padding: .5em;
+  background: white;
+  color: var(accentColor);
+  border: .1em solid var(--accentColor);
+  border-bottom: .3em solid var(--accentColor);
+}
+
+footer>section>form:valid{
+  background: var(--accentColor);
+  transition: all 1s ease-in;
+  border-radius: 1em 0;
+  padding: .5em;
+  box-sizing: border-box;
+}
+
+footer legend{
+  font-size: 1.1em;
+}
+
+footer>section>form>fieldset>input:invalid{
+  color: var(--headerColor);
+  font-weight: bold;
+}
+
+footer>section>form>fieldset>input:valid{
+  color: var(--accentColor);
+}
+
+button{
+  padding: .8em;
+  margin: .8em auto .8em auto;
+  font-size: 1.1em;
+  color: white;
+  background: var(--accentColor);
+  border: none;
+  border-radius: 1em 0;
+  border: .1em solid transparent;
+  transition: all .3s ease-in;
+}
+
+footer>section>form>fieldset>button{
+  background: none
+}
+
+button:hover, button:focus{
+  background: var(--headerColor);
+  border: .1em solid white;
+}
+
+
+footer>p{
+  border-top: .05em solid white;
+  padding-top: 1em;
+  margin-top: 2em;
+  font-size: .8em;
+}
+
 @media only screen and (min-width: 1000px) {
+  header{
+    position: absolute;
+    height: 5em;
+  }
+
   .frame{
-    background: black;
-    width: 100%;
-    height: 100vh;
+    background: var(--headerColor);
+    width: 84%;
+    height: auto;
     display: block;
-    margin: 0;
+    margin: 0 8%;
     padding: 0;
   }
 
-  .frame>video{
-    margin-top: -1em;
+  .frame>video, .frame>img{
+    margin-top: 5em;
     object-fit: cover;
     width: 100%;
-    height: 100vh;
+    height: auto;
+    /* height: 100vh; */
   }
 
+  .frame>img{
+    height: 20em;
+  }
+
+
+
+  /* .hider{
+    position: absolute;
+    background: red;
+
+  } */
+
   .slider{
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     display: block;
     margin: 0;
     padding: 0;
-  }
-
-  header{
-    height: 5em;
   }
 
   nav>ul{
@@ -358,18 +647,20 @@ section h3{
   }
 
   main, footer{
-    margin: 0 8%;
+    margin-left: 8%;
+    margin-right: 8%;
     width: auto;
     background: var(--bgColor);
   }
 
   footer{
-    padding: .5em;
-    background: var(--accentColor);
-    color: white;
-    text-align: center;
-    margin-bottom: 2em;
+    background: var(--headerColor);
   }
+
+  footer>section>img{
+    display: block;
+  }
+
 
   /* section{
     width: 70%;
