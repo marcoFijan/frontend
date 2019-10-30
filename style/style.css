@@ -3,11 +3,10 @@
 	/*COLORS*/
   --bgColor: #f1f1f1;
   --headerColor: #c12026;
-	/* --headerColor: #de373d; */
 	--accentColor: #2264ae;
+  --accentColor2: white;
   --buttonColor: #0077cc;
 }
-
 
 *{
   font-family: 'Roboto', sans-serif;
@@ -33,9 +32,10 @@ body{
 
 h1{
   padding-top: 1em;
-  padding-bottom: .4em;
+  padding-bottom: .8em;
   color: var(--headerColor);
   margin: 0;
+  font-size: 1.5em;
 }
 
 h2{
@@ -72,12 +72,12 @@ strong{
   font-size: 1.05em;
 }
 
-/* ==========================================================================HEADER====================================================================== */
+/* =====================================================================------HEADER------================================================================ */
 header{
   width: 100%;
   height: 5em;
   background: var(--headerColor);
-  border-bottom: .1em solid white;
+  border-bottom: .1em solid var(--accentColor2);
   color: black;
   position: fixed;
   z-index: 2;
@@ -86,7 +86,6 @@ header{
 nav{
   padding: 0;
   margin: 0;
-  /* justify-content: space-between; */
 }
 
 
@@ -100,35 +99,38 @@ nav label{
   padding: 1.5vh;
   font-size: 2.3em;
   background: var(--headerColor);
-  color: white;
+  color: var(--accentColor2);
 }
 
 nav>ul{
-  display: none;
   list-style: none;
   padding: 3vh 0 0 0;
   margin: 0;
+  margin-top: -125vh;
   background: var(--headerColor);
   height: 100vh;
+  padding-top: 10em;
+  transition: all 1s cubic-bezier(.35,.05,.65,1.39);
 }
 
 nav input:checked ~ ul{
   display: block;
+  margin-top: -8em;
 }
 
 nav>ul>li{
   display: block;
   background: var(--headerColor);
-  border-top: solid 1px white;
+  border-top: solid 1px var(--accentColor2);
   transition: all .3s ease-in;
   padding: .1em 1em;
 }
 
 nav>ul>li:hover{
   background: var(--accentColor);
-  border-radius: 1em 0;
-  color: white;
-  border: .1em solid white;
+  /* border-radius: 1em 0; */
+  color: var(--accentColor2);
+  border: .1em solid var(--accentColor2);
   box-sizing: border-box;
 }
 
@@ -136,11 +138,11 @@ nav>ul>li:hover{
 nav>ul>li>a{
   display: block;
   text-align: center;
-  padding: 2em 1em;
+  padding: 1em 1em;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
-  color: white;
+  color: var(--accentColor2);
   text-decoration: none;
 }
 
@@ -170,7 +172,7 @@ nav>img{
   width: 3em;
 }
 
-/* ==========================================================================VIDEO===================================================================== */
+/* ==========================================================================KEYFRAME===================================================================== */
 .frame{
   background: var(--headerColor);
   width: 100%;
@@ -183,27 +185,8 @@ nav>img{
   height: 20em;
   width: 100%;
   object-fit: cover;
-  filter: brightness(90%);
+  filter: brightness(40%);
 }
-
-/* .frame>video, .frame>img, .frame>iframe{
-  margin-top: 4em;
-  height: 33vh;
-  width: 100%;
-  object-fit: cover;
-  filter: brightness(90%);
-} */
-
-/* .slider{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 20vh;
-  width: 94%;
-  margin: 12vh 3% 0 3%;
-  margin: 0 3%;
-  animation: mainslides 39s infinite;
-  /* position: fixed; */
 
 .load{
   padding-top: 5em;
@@ -217,7 +200,7 @@ nav>img{
   width: 100%;
   height: 44.5vh;
   animation: mainslides 80s infinite;
-  filter: grayscale(90%);
+  filter: brightness(80%);
 }
 
 
@@ -237,7 +220,7 @@ nav>img{
 }
 
 
-/* ===========================================================================MAIN====================================================================== */
+/* =====================================================================-------MAIN-------=================================================================== */
 
 /* ===========================================================================WRAPPER====================================================================== */
 
@@ -247,10 +230,11 @@ section{
   margin: 0 auto;
 }
 
-section>div{
+section>section{
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  width: 100%;
 }
 
 /* ===========================================================================DROPDOWN====================================================================== */
@@ -315,15 +299,16 @@ section>ul>li img{
   box-sizing: border-box;
   border-bottom: 0.2em solid var(--accentColor);
   border-radius: .8em 0 0 0;
+  filter: grayscale(80%);
+  transition: all .5s ease-in;
 }
 
 section>ul>li{
   box-sizing: border-box;
-  /* border: 1px solid black; */
-  background: white;
+  background: var(--accentColor2);
   border: 0.2em solid var(--accentColor);
   transition: .4s all ease-in-out;
-  border-radius: 0 0 1em 0;
+  border-radius: 1em 0;
 }
 
 section>ul>li h2{
@@ -344,7 +329,7 @@ section>ul>li article>section{
 section>ul>li article>section:last-child{
   padding: 0;
   margin: 0;
-  background: white;
+  background: var(--accentColor2);
   text-align: center;
   font-size: 1.3em;
   font-weight: bold;
@@ -355,32 +340,19 @@ section>ul>li article>section:last-child{
   align-self: flex-end;
 }
 
-/* section>ul>li article>p:last-child{
-  font-weight: bold;
-  color: var(--headerColor);
-  background: white;
-  font-size: 1.3em;
-  padding: 0.3em;
-  border-radius: 1em 0;
-  text-align: right;
-} */
-
-section>ul>li:hover, section>ul>li:hover a, section>ul>li:hover h2{
+section>ul>li:hover, section>ul>li:hover a{
   background: var(--accentColor);
-  color: white;
+  color: var(--accentColor2);
   transition: .4s ease-in-out;
   border-radius: 1em 0;
 }
 
+section>ul>li:hover img{
+  filter: grayscale(0);
+}
 
-
-/* section>ul>li>div{
-  display: flex;
-  flex-direction: row;
-} */
-
-section>ul>li>div>img{
-  height: 6em;
+section>ul>li:hover h2{
+  color: var(--accentColor2);
 }
 
 section p{
@@ -392,7 +364,6 @@ section h3{
   margin: 0;
   padding: 0;
 }
-
 
 .detailPageMain{
   display: flex;
@@ -407,7 +378,6 @@ section h3{
   max-width: 40em;
   min-width: 20em;
   margin: 0;
-  /* min-width: 30em; */
 }
 
 .detailPageMain>section:first-child>p:last-child{
@@ -418,7 +388,7 @@ section h3{
 .detailPageMain>section:nth-child(2){
   width: 27em;
   text-align: left;
-  background: white;
+  background: var(--accentColor2);
   border-radius: 1em 0;
   height: auto;
   padding: 0 1em;
@@ -427,12 +397,11 @@ section h3{
   min-height: 26em;
   align-self: flex-start;
   margin-bottom: auto;
-  /* min-width: 25em; */
 }
 
 table{
   border: 1px solid black;
-  background: white;
+  background: var(--accentColor2);
   width: 100%;
   border-collapse: collapse;
   margin: 1em 0;
@@ -444,7 +413,7 @@ table>tr{
 
 th{
   padding: 1em 0;
-  color: white;
+  color: var(--accentColor2);
   background: var(--accentColor);
 }
 
@@ -453,12 +422,57 @@ td{
   text-align: center;
 }
 
+main>form{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 1.5em;
+}
+
+main>form>label{
+  padding-bottom: .5em;
+  color: var(--accentColor);
+}
+
+main>form>input{
+  padding: .5em;
+  box-sizing: border-box;
+}
+
+main>form>button{
+  width: 40%;
+  min-width: 15em;
+}
+
+main>ul{
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+main>ul>li{
+  background: var(--accentColor2);
+  padding: 1em;
+  width: 9em;
+  align-items: center;
+}
+
+ul>li>button{
+  position: absolute;
+  margin-top: -19.6em;
+  margin-left: -.8em;
+  padding: .4em .8em;
+  border: .1em solid var(--bgColor);
+}
 
 
 /* ===========================================================================FOOTER====================================================================== */
 footer{
   background: var(--headerColor);
-  color: white;
+  color: var(--accentColor2);
   text-align: center;
   margin-bottom: 3em;
   padding: 3% 5%;
@@ -473,11 +487,16 @@ footer>section{
 }
 
 footer>section>img{
-  /* max-width: 7em; */
   width: 24%;
   max-width: 15em;
   margin: auto;
   display: none;
+  transition: transform 3s ease-in-out;
+}
+
+footer>section>img:hover{
+  transform: rotate(1440deg);
+  transition: transform 3s ease-in-out;
 }
 
 footer>section>form{
@@ -506,11 +525,12 @@ footer>section>form>fieldset>input{
   color: black;
   border: .1em solid transparent;
   border-bottom: .3em solid transparent;
+  width: 100%;
 }
 
 footer>section>form>fieldset>input:focus{
-  padding: .5em;
-  background: white;
+  padding: .5em .1em;
+  background: var(--accentColor2);
   color: var(accentColor);
   border: .1em solid var(--accentColor);
   border-bottom: .3em solid var(--accentColor);
@@ -531,17 +551,21 @@ footer legend{
 footer>section>form>fieldset>input:invalid{
   color: var(--headerColor);
   font-weight: bold;
+  background: #ffaeae;
 }
 
 footer>section>form>fieldset>input:valid{
   color: var(--accentColor);
+  color: var(--accentColor2);
+  background: var(--accentColor);
+  border-bottom: .1em solid var(--accentColor2);
 }
 
 button{
-  padding: .8em;
+  padding: .5em;
   margin: .8em auto .8em auto;
-  font-size: 1.1em;
-  color: white;
+  font-size: 1em;
+  color: var(--accentColor2);
   background: var(--accentColor);
   border: none;
   border-radius: 1em 0;
@@ -555,12 +579,11 @@ footer>section>form>fieldset>button{
 
 button:hover, button:focus{
   background: var(--headerColor);
-  border: .1em solid white;
+  border: .1em solid var(--accentColor2);
 }
 
-
 footer>p{
-  border-top: .05em solid white;
+  border-top: .05em solid var(--accentColor2);
   padding-top: 1em;
   margin-top: 2em;
   font-size: .8em;
@@ -572,34 +595,26 @@ footer>p{
     height: 5em;
   }
 
-  .frame{
+  .frame, .frameImg{
     background: var(--headerColor);
-    width: 84%;
+    width: 100%;
     height: auto;
     display: block;
-    margin: 0 8%;
+    margin: 0;
     padding: 0;
   }
 
-  .frame>video, .frame>img{
+  .frameImg{
+    width: 84%;
+    margin: 0 auto;
+  }
+
+  .frameImg>img{
     margin-top: 5em;
     object-fit: cover;
     width: 100%;
-    height: auto;
-    /* height: 100vh; */
-  }
-
-  .frame>img{
     height: 20em;
   }
-
-
-
-  /* .hider{
-    position: absolute;
-    background: red;
-
-  } */
 
   .slider{
     height: 100vh;
@@ -614,6 +629,7 @@ footer>p{
     margin: 1em 0 1em 17%;
     padding: 0;
     height: 3em;
+    transition-duration: 0s;
   }
 
   nav>ul>li{
@@ -621,16 +637,12 @@ footer>p{
     border: .1em solid var(--headerColor);
     padding: .5em;
     margin: .2em;
+    border-radius: 1em 0;
   }
 
   nav>ul>li:first-child{
     display: none;
   }
-
-  /* nav>ul>li:hover{
-    border-bottom: 1px solid white;
-    transition: 0.3s border-bottom;
-  } */
 
   nav>ul>li>a{
     width: auto;
@@ -660,144 +672,44 @@ footer>p{
   footer>section>img{
     display: block;
   }
-
-
-  /* section{
-    width: 70%;
-    margin: 0 auto;
-  } */
 }
 
-
-
-
-/* header{
-  color: white;
-  width: 100vw;
-  margin: 0;
-  padding: 0 5vw;
-  height: 9vh;
-  box-sizing: border-box;
-  display: flex;
-  position: fixed;
-  z-index: 2;
-}
-
-header > img{
-  width: 30vmin;
-  margin-right: auto;
-  align-self: flex-start;
-}
-/*de373d*/
-/* 2264ae */
-/* nav>ul{
-  background: #de373d;
-  opacity: 0.8;
-  display: flex;
-  align-items: center;
-  margin-top: 1vh;
-  padding-left: 0;
-  border: solid 1px white;
-}
-
-nav > ul > li{
-  list-style: none;
-  width: 10vw;
-  text-align: center;
-}
-
-li:hover > a{
-  transition: 0.6s color;
-  color: #2264ae;
-  background: #de373d;
-  border-left: solid 1px white;
-  border-right: solid 1px white;
-  box-sizing: border-box;
-}
-
-nav > ul > li > a{
-  transition: 0.6s color;
-  flex-direction: column;
-  align-content: center;
-  text-decoration: none;
-  color: white;
-  display: block;
-  padding: 2.5vh 0;
-}
-
-.load{
-  animation: mainslides 7s;
-}
-
-.slider{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  animation: mainslides 21s infinite;
-  position: fixed;
-}
-
-@keyframes mainslides {
-  0%{
-    background-image: url("../resources/images/main1.jpg");
-  }
-  33%{
-    background-image: url("../resources/images/main2.jpg");
-  }
-  66%{
-    background-image: url("../resources/images/main3.jpg");
-  }
-  100%{
-    background-image: url("../resources/images/main1.jpg");
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-
-    background-color: lightblue;
+/* =====================================================================Dark theme Windows 10====================================================================== */
+/* Bron dark theme windows 10: https://www.youtube.com/watch?v=_yCgeXFAXTM */
+@media (prefers-color-scheme: dark){
+  :root {
+  	/*COLORS*/
+    --bgColor: black;
+    --accentColor2: black;
   }
 
-  nav > ul{
-    flex-direction: row;
+  *{
+    color: #c1c1c1;
+  }
+
+  header, .frame, .frameImg, h1, footer {
+    filter: brightness(70%);
+  }
+
+  body{
+    background: url(../resources/images/bgImageDark.jpg);
+  }
+
+  main{
+    border-left: .1em solid #c1c1c1;
+    border-right: .1em solid #c1c1c1;
+  }
+
+  footer{
+    border: .1em solid white;
+  }
+
+  section>ul>li:hover h2{
+    color: var(--headerColor);
+    transition: all 1s ease-in-out;
+  }
+
+  section>ul>li:hover{
+    background: black;
   }
 }
-
-main{
-  width: 100%;
-  min-height: 100vh;
-  top: 100vh;
-  background: #e2e2e2;
-  padding: 5vh 10vw;
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-.trainingen{
-  background: white;
-  padding: 5vh 10vw;
-}
-
-.trainingen > h2{
-  margin-top: 0;
-}
-
-.trainingen ul{
-  padding: 0;
-}
-
-.trainingen li{
-  transition: 1s padding;
-  list-style: none;
-  padding: 0;
-
-}
-
-.trainingen li:hover{
-  transition: 1s padding;
-  padding: 0 3vw;
-}  */

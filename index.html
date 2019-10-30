@@ -10,7 +10,6 @@
 </head>
 <body>
   <header>
-    <!-- <a href="index.html"><img src="resources/images/logo.png" alt="logo"></a> -->
       <!-- NAVIGATION BAR -->
       <a href="index.html"><img src="resources/images/logo.png" alt="logo"></a>
       <nav>
@@ -26,21 +25,15 @@
           <li><a href="#">Uitleg obstakels</a></li>
         </ul>
       </nav>
-      <!-- <img src="resources/logos/searchLogo.svg" alt="Zoek afbeelding"> -->
   </header>
   <div class="frame">
     <div class="slider">
       <div class="load"></div>
     </div>
   </div>
-  <!-- <div class="frame">
-    <video muted autoplay loop>
-      <source src="resources/video/headerVideo.mp4" type="video/mp4">
-    </video>
-  </div> -->
   <main>
     <section>
-      <div>
+      <section>
         <h1>Alle trainingen</h1>
         <!-- Bron code voor disabled selected: https://stackoverflow.com/questions/5805059/how-do-i-make-a-placeholder-for-a-select-box#5859221 -->
         <select>
@@ -49,9 +42,9 @@
           <option value="provider">Aanbieder</option>
           <option value="review">Beoordeling</option>
         </select>
-      </div>
+      </section>
 
-      <ul>
+      <ul class="trainingList">
         <li>
           <a href="tarzanSwing.html">
             <!-- Bron afbeelding: https://www.americanninjawarriornation.com/ -->
@@ -68,6 +61,7 @@
               </section>
             </article>
           </a>
+          <button class="deleteButton">x</button>
         </li>
         <li>
           <!-- Bron afbeelding: https://www.americanninjawarriornation.com/2017/7/21/16011390/american-ninja-warrior-tv-schedule-2017-los-angeles-city-finals-start-time-and-live-stream -->
@@ -75,7 +69,7 @@
           <h2>Jumping Bars</h2>
           <article>
             <section>
-              <p>Door: Henk Brouwer</p>
+              <p>Henk Brouwer</p>
               <p>Vandaag 11:00</p>
               <p>Beginner</p>
             </section>
@@ -83,6 +77,7 @@
               <p>2.5km</p>
             </section>
           </article>
+          <button class="deleteButton">x</button>
         </li>
         <li>
           <!-- Bron afbeelding: https://cocreatex.wordpress.com/2015/03/25/lets-build-a-salmon-ladder/ -->
@@ -98,6 +93,7 @@
               <p>5.7km</p>
             </section>
           </article>
+          <button class="deleteButton">x</button>
         </li>
         <li>
           <!-- Bron afbeelding: https://geekdad.com/wp-content/uploads/2017/09/lindsay1.jpg -->
@@ -113,6 +109,7 @@
               <p>7.2km</p>
             </section>
           </article>
+          <button class="deleteButton">x</button>
         </li>
         <li>
           <!-- Bron afbeelding: https://www.americanninjawarriornation.com/ -->
@@ -120,7 +117,7 @@
           <h2>Bodyfit: Tarzan Swing</h2>
           <article>
             <section>
-              <p>Door: Michiel van Kuijpen</p>
+              <p>Michiel van Kuijpen</p>
               <p>Vandaag 11:00</p>
               <p>Alle niveaus</p>
             </section>
@@ -128,6 +125,7 @@
               <p>13.8km</p>
             </section>
           </article>
+          <button class="deleteButton">x</button>
         </li>
       </ul>
     </section>
@@ -140,7 +138,7 @@
           <h2>Jumping Bars</h2>
           <article>
             <section>
-              <p>Door: Henk Brouwer</p>
+              <p>Henk Brouwer</p>
               <p>Vandaag 11:00</p>
               <p>Beginner</p>
             </section>
@@ -152,7 +150,7 @@
         <li>
           <!-- Bron afbeelding: https://cocreatex.wordpress.com/2015/03/25/lets-build-a-salmon-ladder/ -->
           <img src="resources/images/salmonLadder.jpg" alt="Salmon Ladder image">
-          <h2>De bulder bas: Salmon Ladder</h2>
+          <h2>De bulder: Salmon Ladder</h2>
           <article>
             <section>
               <p>Sportschool</p>
@@ -182,12 +180,15 @@
           <label for="email">E-Mailadres</label>
           <input id="email" required type="email">
 
-          <button>Verzenden</button>
+          <label for="phone">Telefoon</label>
+          <input id="phone" required type="number">
 
+          <button>Verzenden</button>
         </fieldset>
       </form>
     </section>
     <p>Copyrighted by: Marco Fijan</p>
   </footer>
+  <script src="script/script.js"></script>
 </body>
 </html>
